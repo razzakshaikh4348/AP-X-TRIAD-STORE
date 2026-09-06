@@ -1,0 +1,172 @@
+:root{
+  --bg-void: #0d0b09;
+  --bg-panel: #17130f;
+  --bg-card: #1c1712;
+  --ink: #ede4d3;
+  --ink-dim: #a79b87;
+  --blood: #7a1f1f;
+  --blood-bright: #a4302f;
+  --line: #3a322a;
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  background: var(--bg-void);
+  color: var(--ink);
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(ellipse at 50% -10%, rgba(122,31,31,0.10), transparent 60%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main{ flex: 1; }
+
+.display{ font-family: 'Bevan', serif; }
+a{ color: inherit; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
+
+/* ---------- Nav ---------- */
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.75rem;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: rgba(13,11,9,0.92);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+.brand-mark{
+  font-family: 'Bevan', serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+.brand-mark span{ color: var(--blood-bright); }
+
+.nav-links{
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--ink-dim);
+  list-style: none;
+}
+
+.nav-links a{ text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover{ color: var(--ink); }
+.nav-links a.active{ color: var(--ink); border-bottom: 1px solid var(--blood-bright); padding-bottom: 3px; }
+
+.nav-toggle{
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+}
+
+@media (max-width: 640px){
+  .nav-links{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-void);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    padding: 1rem 1.75rem;
+    gap: 1rem;
+    display: none;
+  }
+  .nav-links.open{ display: flex; }
+  .nav-toggle{ display: block; }
+}
+
+/* ---------- Shared page header ---------- */
+
+.page-header{
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.page-header h1{
+  font-size: clamp(2rem, 6vw, 3rem);
+  letter-spacing: 0.03em;
+}
+
+.page-header p{
+  margin-top: 0.9rem;
+  color: var(--ink-dim);
+  max-width: 44ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rule{
+  height: 1px;
+  background: var(--line);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+section{
+  padding: 4rem 1.5rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn{
+  display: inline-block;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-family: 'Bevan', serif;
+  letter-spacing: 0.03em;
+  padding: 0.75rem 1.6rem;
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.btn:hover{
+  background: var(--blood);
+  border-color: var(--blood);
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-dim);
+  font-size: 0.82rem;
+}
+
+footer .foot-links{
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+footer .foot-links a{ text-decoration: none; color: var(--ink-dim); }
+footer .foot-links a:hover{ color: var(--ink); }

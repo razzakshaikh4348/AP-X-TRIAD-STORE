@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Triad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bevan&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero{
+    min-height: 88svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1.5rem;
+  }
+
+  .crest{
+    width: min(240px, 55vw);
+    border-radius: 4px;
+    filter: sepia(0.15) contrast(1.05);
+    opacity: 0;
+    transform: scale(0.94);
+    animation: rise 1.3s cubic-bezier(.16,.8,.24,1) forwards;
+  }
+
+  @keyframes rise{ to{ opacity: 1; transform: scale(1); } }
+
+  .hero h1{
+    margin-top: 2rem;
+    font-size: clamp(2.4rem, 8vw, 4.4rem);
+    letter-spacing: 0.05em;
+    opacity: 0;
+    animation: fadeUp 1s ease-out 0.4s forwards;
+  }
+
+  .hero h1 span{ color: var(--blood-bright); }
+
+  .hero p{
+    margin-top: 0.8rem;
+    max-width: 36ch;
+    color: var(--ink-dim);
+    opacity: 0;
+    animation: fadeUp 1s ease-out 0.7s forwards;
+  }
+
+  .hero-actions{
+    margin-top: 1.8rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 1s ease-out 0.9s forwards;
+  }
+
+  @keyframes fadeUp{
+    from{ opacity: 0; transform: translateY(10px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  .btn-ghost{
+    display: inline-block;
+    padding: 0.75rem 1.6rem;
+    font-family: 'Bevan', serif;
+    letter-spacing: 0.03em;
+    color: var(--ink-dim);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-ghost:hover{ color: var(--ink); border-color: var(--blood-bright); }
+
+  .triad-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .triad-item h3{
+    font-family: 'Bevan', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+  }
+
+  .triad-item .beast{
+    display: block;
+    font-size: 0.78rem;
+    color: var(--blood-bright);
+    letter-spacing: 0.08em;
+    margin-top: 0.3rem;
+  }
+
+  .triad-item p{
+    margin-top: 0.5rem;
+    font-size: 0.92rem;
+    color: var(--ink-dim);
+  }
+
+  @media (max-width: 620px){
+    .triad-grid{ grid-template-columns: 1fr; gap: 2.2rem; }
+  }
+
+  .cta-band{
+    text-align: center;
+    padding: 4.5rem 1.5rem;
+  }
+
+  .cta-band h2{
+    font-family: 'Bevan', serif;
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+    margin-bottom: 0.7rem;
+  }
+
+  .cta-band p{
+    color: var(--ink-dim);
+    max-width: 42ch;
+    margin: 0 auto 1.6rem;
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="brand-mark" href="home.html">APEX <span>TRIAD</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="home.html" class="active">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <img class="crest" src="logo.jpg" alt="Apex Triad crest — bison, eagle, and wolf">
+      <h1 class="display">APEX <span>TRIAD</span></h1>
+      <p>Three beasts. One instinct. Apparel and gear for those who train like it's survival.</p>
+      <div class="hero-actions">
+        <a class="btn" href="shop.html">Shop the drop</a>
+        <a class="btn-ghost" href="story.html">Read our story</a>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <section class="triad-grid">
+      <div class="triad-item">
+        <h3>Endurance</h3>
+        <span class="beast">The Bison</span>
+        <p>Carries weight the others can't. Moves forward regardless of the storm.</p>
+      </div>
+      <div class="triad-item">
+        <h3>Vision</h3>
+        <span class="beast">The Eagle</span>
+        <p>Sees the goal before the first rep. Never trains without a target.</p>
+      </div>
+      <div class="triad-item">
+        <h3>Aggression</h3>
+        <span class="beast">The Wolf</span>
+        <p>Hunts in the gap between comfort and effort. Finishes what it starts.</p>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <div class="cta-band">
+      <h2 class="display">Join the pack</h2>
+      <p>New drops, training drills, and early access — straight from Apex Triad.</p>
+      <a class="btn" href="contact.html">Get in touch</a>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Apex Triad. All rights reserved.
+    <div class="foot-links">
+      <a href="mailto:apextriadfit@gmail.com">Email</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+  </script>
+
+</body>
+</html>
