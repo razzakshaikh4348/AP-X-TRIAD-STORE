@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story — ApΞx Triad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bevan&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .story-body{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .story-body p{
+    margin-bottom: 1.3rem;
+    color: var(--ink-dim);
+  }
+
+  .story-body p strong{ color: var(--ink); }
+
+  .pull{
+    font-family: 'Bevan', serif;
+    font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+    color: var(--ink);
+    text-align: center;
+    max-width: 20ch;
+    margin: 3rem auto;
+    line-height: 1.4;
+  }
+
+  .beast-list{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .beast-row{
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .beast-row:last-child{ border-bottom: 1px solid var(--line); }
+
+  .beast-row .name{
+    font-family: 'Bevan', serif;
+    min-width: 110px;
+    color: var(--blood-bright);
+    letter-spacing: 0.02em;
+  }
+
+  .beast-row p{ color: var(--ink-dim); font-size: 0.95rem; }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="brand-mark" href="index.html">APΞX <span>TRIAD</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="story.html" class="active">Story</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1 class="display">Where the name comes from</h1>
+    </div>
+
+    <div class="story-body">
+      <p><strong>Apex Triad</strong> started with a question: what does it actually take to be at the top of the food chain? Not one trait — three. Every apex predator survives by combining more than raw strength: it needs staying power, sharp awareness, and the will to close the distance when it matters.</p>
+
+      <p>The crest brings together three animals that each embody one of those traits — <strong>the bison, the eagle, and the wolf</strong> — bound by a single beaded cord, the way a triad works: three parts, one force.</p>
+
+      <p class="pull">Three beasts. One instinct.</p>
+
+      <p>This brand is for the people training toward that same standard — not chasing perfect form for the mirror, but building the kind of strength, focus, and drive that shows up when it's actually needed.</p>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="beast-list">
+      <div class="beast-row">
+        <div class="name">The Bison</div>
+        <p>Endurance. Built to carry weight and keep moving through conditions that stop everyone else.</p>
+      </div>
+      <div class="beast-row">
+        <div class="name">The Eagle</div>
+        <p>Vision. Sees the target clearly before the first move is even made.</p>
+      </div>
+      <div class="beast-row">
+        <div class="name">The Wolf</div>
+        <p>Aggression. Closes the gap between comfort and effort, and finishes what it starts.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Apex Triad. All rights reserved.
+    <div class="foot-links">
+      <a href="mailto:apextriadfit@gmail.com">Email</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+  </script>
+
+</body>
+</html>

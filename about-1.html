@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — ApΞx Triad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bevan&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .about-body{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .about-body p{
+    margin-bottom: 1.3rem;
+    color: var(--ink-dim);
+  }
+
+  .about-body p strong{ color: var(--ink); }
+
+  .values{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .value-card{
+    border: 1px solid var(--line);
+    padding: 1.5rem;
+  }
+
+  .value-card h3{
+    font-family: 'Bevan', serif;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.6rem;
+  }
+
+  .value-card p{
+    font-size: 0.9rem;
+    color: var(--ink-dim);
+  }
+
+  @media (max-width: 620px){
+    .values{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="brand-mark" href="index.html">APΞX <span>TRIAD</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1 class="display">About Apex Triad</h1>
+      <p>An apparel brand built for people who train with intent, not just for show.</p>
+    </div>
+
+    <div class="about-body">
+      <p>Apex Triad makes training apparel and gear for people who take their effort seriously — not gym-influencer content, just gear that holds up to real work.</p>
+      <p>We're a new, independent brand, run directly by the people who design it. Every order right now is fulfilled personally, which means slower shipping than a big retailer, but also means you're supporting something built from scratch rather than a warehouse.</p>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="values">
+      <div class="value-card">
+        <h3>Built to be used</h3>
+        <p>Gear is tested for actual training, not just photos. If it can't take a real session, it doesn't go in the store.</p>
+      </div>
+      <div class="value-card">
+        <h3>Small batch, honest</h3>
+        <p>We'd rather sell out of a small run than overpromise on stock we can't deliver on time.</p>
+      </div>
+      <div class="value-card">
+        <h3>Direct to you</h3>
+        <p>No middlemen right now — orders, questions, and feedback all come straight to us.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Apex Triad. All rights reserved.
+    <div class="foot-links">
+      <a href="mailto:apextriadfit@gmail.com">Email</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+  </script>
+
+</body>
+</html>
